@@ -11,14 +11,14 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import environ
 import os
+from dotenv import load_dotenv
 
-env = environ.Env()
+# Determine which .env file to load based on DJANGO_ENV
 ENV_FILE = ".env.production" if os.getenv("DJANGO_ENV") == "production" else ".env.development"
 
-environ.Env.read_env(ENV_FILE)
-print(env('DB_ENGINE'))
+# Load the appropriate .env file
+load_dotenv(dotenv_path=ENV_FILE)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -92,12 +92,12 @@ WSGI_APPLICATION = "url_shortner_backend.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': env('DB_ENGINE'),
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
+        'ENGINE': os.getenv('DB_ENGINE'),
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 
