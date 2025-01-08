@@ -1,0 +1,7 @@
+/venv
+/url_shortner_frontend/node_modules
+.env.development
+.env.production
+/url_shortner_frontend/.env.development
+/url_shortner_frontend/.env.production
+/url_shortner_frontend/build

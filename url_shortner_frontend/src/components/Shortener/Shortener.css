@@ -1,0 +1,56 @@
+.shortener {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .shortener h1 {
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  .shortener input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .shortener button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .shortener button:hover {
+    background-color: #0056b3;
+  }
+  
+  .shortener p {
+    margin-top: 15px;
+  }
+  
+  .shortener a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .shortener a:hover {
+    text-decoration: underline;
+  }
+  
+  .shortener .error {
+    color: red;
+    margin-top: 10px;
+  }
+  

@@ -1,0 +1,74 @@
+.analytics {
+    max-width: 90%; /* Make the analytics container take 90% of the screen width */
+    margin: 50px auto; /* Center the container */
+    padding: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Enable horizontal scrolling if the table overflows */
+  }
+  
+  .analytics h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  .analytics table {
+    width: 100%; /* Make the table responsive */
+    border-collapse: collapse; /* Remove gaps between table cells */
+    table-layout: auto; /* Allow the table to adjust column widths */
+  }
+  
+  .analytics table th,
+  .analytics table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle; /* Align content in the middle vertically */
+  }
+  
+  .analytics table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .analytics table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .analytics table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .analytics table td a {
+    color: #007bff;
+    text-decoration: none;
+    word-break: break-word; /* Allow long words or URLs to break to the next line */
+    overflow-wrap: break-word; /* Ensure compatibility across browsers */
+  }
+  
+  .analytics table td a:hover {
+    text-decoration: underline;
+  }
+  .analytics table td .delete-button {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .analytics table td .delete-button:hover {
+    background-color: #d9363e;
+  }
+  @media (max-width: 768px) {
+    .analytics table td,
+    .analytics table th {
+      font-size: 14px; /* Adjust font size for smaller screens */
+      padding: 8px;
+    }
+  }
+  

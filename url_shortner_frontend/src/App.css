@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.success {
+  color: green;
+  font-size: 14px;
+}
