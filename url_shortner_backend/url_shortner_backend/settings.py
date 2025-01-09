@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "url_shortener_app",
+    "url_shortner_app",
     "rest_framework",
     "rest_framework_simplejwt",
     "corsheaders"
@@ -64,6 +64,9 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React dev server
+    "http://localhost", # Nginx PROD
+    "http://192.168.1.8",
+    "http://192.168.1.8:3000"
 ]
 
 ROOT_URLCONF = "url_shortner_backend.urls"
@@ -104,11 +107,11 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",  # Redis instance
+        "LOCATION": f"redis://{os.getenv('REDIS_HOST')}:{os.getenv('REDIS_PORT')}/{os.getenv('REDIS_DB_NUMBER')}",  # Redis instance
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         },
-        "KEY_PREFIX": "urlshortener"
+        "KEY_PREFIX": "urlshortner"
     }
 }
 
@@ -149,7 +152,7 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-AUTH_USER_MODEL = 'url_shortener_app.CustomUser'
+AUTH_USER_MODEL = 'url_shortner_app.CustomUser'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [

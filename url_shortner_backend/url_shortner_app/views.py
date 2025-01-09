@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 
 
-class URLShortenerView(APIView):
+class URLShortnerView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):

@@ -1,11 +1,11 @@
 from django.contrib import admin
 from django.urls import path, include
-from url_shortener_app.views import RedirectView, URLShortenerView
+from url_shortner_app.views import RedirectView, URLShortnerView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('url_shortener_app.urls')),  # Include the app-level URLs
+    path('api/', include('url_shortner_app.urls')),  # Include the app-level URLs
     path('<str:short_url>/', RedirectView.as_view(), name='redirect'),
-    # path('shorten/', URLShortenerView.as_view(), name='shorten_url'),
+    # path('shorten/', URLShortnerView.as_view(), name='shorten_url'),
 ]

@@ -5,3 +5,4 @@
 /url_shortner_frontend/.env.development
 /url_shortner_frontend/.env.production
 /url_shortner_frontend/build
+/url_shortner_backend/migrations/*
