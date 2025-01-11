@@ -63,7 +63,7 @@ class URLShortnerView(APIView):
         Generates a unique short code for the URL.
         """
         while True:
-            short_code = get_random_string(6)  # Generate a random 6-character string
+            short_code = f"su/{get_random_string(6)}"  # Generate a random 6-character string
             if not URL.objects.filter(short_url=short_code).exists():
                 return short_code
 

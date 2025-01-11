@@ -66,7 +66,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React dev server
     "http://localhost", # Nginx PROD
     "http://192.168.1.8",
-    "http://192.168.1.8:3000"
+    "http://192.168.1.8:3000",
+    "http://*"
 ]
 
 ROOT_URLCONF = "url_shortner_backend.urls"

@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ./url_shortner_backend
+    container_name: url_shortner_backend
+    env_file:
+      - ./url_shortner_backend/.env.production
+#    ports:
+#      - "8000:8000"  # Optional for debugging
+    expose:
+      - 8000  # Only expose port 8000 for Nginx reverse proxy docker container internally
+    depends_on:
+      - redis
+    environment:
+      - DJANGO_ENV=production
+
+  frontend:
+    build:
+      context: ./url_shortner_frontend
+    container_name: url_shortner_frontend
+#    ports:
+#      - "3000:80"  # Optional for debugging (React's dev server is not used in production)
+#    expose:
+#      - 80  # Only expose port 80 for Nginx reverse proxy docker container internally
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  reverse-proxy:
+    build:
+      context: ./nginx
+    container_name: url_shortner_reverse-proxy
+    ports:
+      - "80:80"  # Expose Nginx reverse proxy on port 80 for access from outside
+      - "8000:8000"
+    depends_on:
+      - backend
+      - frontend

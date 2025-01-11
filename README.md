@@ -25,3 +25,5 @@ docker run -d -p 80:80 url_shortner_frontend
 
 Run docker container in detached mode with env variables:
 docker run -d -p 8000:8000 -e DJANGO_ENV=production url_shortner_backend
+
+Run docker 
